@@ -52,3 +52,7 @@
 
     * Open default port 9999
     * `http://{your device ip}:9999/`
+
+# Disclaimer:
+
+**Thank you for using our services. The information and tools we provide are for informational purposes only and we make no warranty or promise as to their safety, accuracy or reliability. We are not responsible for any loss or problem caused by improper use, network failure, etc. during use. Use with caution and at your own risk.**
