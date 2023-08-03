@@ -18,7 +18,7 @@ M=$(uname -m)
 URL="https://raw.githubusercontent.com/kluoyun/FLY-Tools/main/application/Fly-Tools_linux_arm64"
 TTYD_URL="https://github.com/tsl0922/ttyd/releases/download/1.7.3/ttyd.aarch64"
 
-if [ "$M" = "armhf" ] ;then
+if [ "$M" = "armhf" ] || [ "$M" = "armv7l" ] ;then
     URL="https://raw.githubusercontent.com/kluoyun/FLY-Tools/main/application/Fly-Tools_linux_arm"
     TTYD_URL="https://github.com/tsl0922/ttyd/releases/download/1.7.3/ttyd.armhf"
 elif [ "$M" = "arm64" ] || [ "$M" = "aarch64" ] ;then
