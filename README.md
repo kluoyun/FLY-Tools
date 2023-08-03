@@ -7,7 +7,7 @@ Note: FLY-Tools can automatically obtain the klipper directory through klipper.s
 1. Install FLY-Tools using the install script
 
     ```
-    wget -O flytools_install.sh https://github.com/kluoyun/FLY-Tools/blob/main/scripts/install.sh && sudo bash flytools_install.sh
+    wget -O flytools_install.sh https://raw.githubusercontent.com/kluoyun/FLY-Tools/main/scripts/install.sh && sudo bash flytools_install.sh
     ```
 
       

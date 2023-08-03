@@ -15,14 +15,14 @@ fi
 
 M=$(uname -m)
 
-URL="https://github.com/kluoyun/FLY-Tools/blob/main/application/Fly-Tools_linux_arm64"
+URL="https://raw.githubusercontent.com/kluoyun/FLY-Tools/main/application/Fly-Tools_linux_arm64"
 
 if [ "$M" = "armhf" ] || [ "$M" = "arm" ] ;then
-    URL="https://github.com/kluoyun/FLY-Tools/blob/main/application/Fly-Tools_linux_arm"
+    URL="https://raw.githubusercontent.com/kluoyun/FLY-Tools/main/application/Fly-Tools_linux_arm"
 elif [ "$M" = "arm64" ] || [ "$M" = "aarch64" ] ;then
-    URL="https://github.com/kluoyun/FLY-Tools/blob/main/application/Fly-Tools_linux_arm64"
+    URL="https://raw.githubusercontent.com/kluoyun/FLY-Tools/main/application/Fly-Tools_linux_arm64"
 elif [ "$M" = "x86_64" ];then
-    URL="https://github.com/kluoyun/FLY-Tools/blob/main/application/Fly-Tools_linux_amd64"
+    URL="https://raw.githubusercontent.com/kluoyun/FLY-Tools/main/application/Fly-Tools_linux_amd64"
 else
     echo "Unsupported System Architectures: ${M} !!!"
     exit 1
