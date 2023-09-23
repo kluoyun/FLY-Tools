@@ -1,5 +1,6 @@
 # FLY-Tools
 
+[English](./README.md)
 
 **注意：FLY-Tools可以通过系统中的klipper.service自动获取klipper目录。 如果自动获取失败，请手动添加配置文件。**
 

@@ -1,5 +1,7 @@
 # FLY-Tools
 
+[中文](./README-ZH.md)
+
 **Note: FLY-Tools can automatically obtain the klipper directory through klipper.service in the system. If the automatic acquisition fails, please manually specify the klipper directory.**
 
 **Note: The old version of klipper is not supported, please be sure to use the latest version of klipper.**
