@@ -1,5 +1,4 @@
 #!/bin/sh
-set -e
 
 if [ "${SUDO_USER}" = "root" ]; then
     echo "Please do not execute it under the root user"
