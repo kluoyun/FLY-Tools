@@ -125,6 +125,13 @@ sudo systemctl daemon-reload
 sudo systemctl enable ttyd-f.service
 sudo systemctl restart ttyd-f.service
 
+if [ -e "/etc/systemd/system/FLY-Tools.service" ];then
+    sudo systemctl stop FLY-Tools.service > /dev/null 2>&1
+    sudo rm /etc/systemd/system/FLY-Tools.service > /dev/null 2>&1
+    sudo rm /usr/local/bin/FLY-Tools > /dev/null 2>&1
+    sudo systemctl daemon-reload > /dev/null 2>&1
+fi
+
 sudo systemctl stop Fly-Tools.service > /dev/null 2>&1
 sudo rm /usr/local/bin/Fly-Tools > /dev/null 2>&1
 sudo wget -c $URL -O /usr/local/bin/Fly-Tools #> /dev/null 2>&1
