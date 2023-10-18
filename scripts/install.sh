@@ -118,7 +118,7 @@ Restart=always
 RemainAfterExit=yes
 RestartSec=1
 User=root
-ExecStart=/usr/local/bin/ttyd-f -p 9998 -6 -O login
+ExecStart=/usr/local/bin/ttyd-f --writable -p 9998 -6 -O login
 EOF
 
 sudo systemctl daemon-reload
