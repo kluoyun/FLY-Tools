@@ -74,11 +74,19 @@
 
 3. 安装Fly-Tools服务
 
-    * 安装过程依赖Github服务，如果安装过程中长时间无响应，请按`Ctrl + C`退出安装脚本并重试
+    > 安装过程依赖于Git服务商。如果遇到下载进度卡住不动，请按 `CTRL+C` 退出重试
 
-    ```
-    curl -kfsSL https://raw.githubusercontent.com/kluoyun/FLY-Tools/main/scripts/install.sh | sudo bash
-    ```
+    * 通过Gitee获取安装脚本
+
+        ```
+        curl -kfsSL https://gitee.com/zxkxz/FLY-Tools/raw/main/scripts/install.sh | sudo bash
+        ```
+
+    * 通过Github获取安装脚本
+
+        ```
+        curl -kfsSL https://raw.githubusercontent.com/kluoyun/FLY-Tools/main/scripts/install.sh | sudo bash
+        ```
 
 4. 打开浏览器
 

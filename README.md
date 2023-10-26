@@ -76,9 +76,19 @@
 
 3. Install Fly-Tools service
 
-    ```
-    curl -kfsSL https://raw.githubusercontent.com/kluoyun/FLY-Tools/main/scripts/install.sh | sudo bash
-    ```
+    > The installation process relies on the Git service provider. If the download progress is stuck, please press `CTRL+C` to exit and try again.
+
+    * Get the installation script via Github
+
+        ```
+        curl -kfsSL https://raw.githubusercontent.com/kluoyun/FLY-Tools/main/scripts/install.sh | sudo bash
+        ```
+
+    * Get the installation script via Gitee
+
+        ```
+        curl -kfsSL https://gitee.com/zxkxz/FLY-Tools/raw/main/scripts/install.sh | sudo bash
+        ```
 
 4. Open from the browser
 
