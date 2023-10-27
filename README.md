@@ -78,6 +78,8 @@
 
     > The installation process relies on the Git service provider. If the download progress is stuck, please press `CTRL+C` to exit and try again.
 
+    > The maximum number of requests per hour for Github is 60, unknown for Gitee
+
     * Get the installation script via Github
 
         ```
