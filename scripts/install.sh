@@ -63,13 +63,13 @@ esac
 LTAG=$(curl -Ls "https://${GIT_API}/repos/${GIT_USER}/FLY-Tools/releases/latest" | jq -r '.tag_name')
 if [ "$?" != "0" ]; then
     dialog --colors --backtitle "Fly-Tools Installer (1/3)" --title "\Z1\ZbInstall Error Fly-Tools" --infobox "\Z3Unable to get latest version.\n If it is a gitee source, it may be that your installation times are too many, resulting in IP restrictions." 10 60
-    echo "\n"
+    echo
     exit 1
 fi
 TTYD_LTAG=$(curl -Ls "https://${GIT_API}/repos/${GIT_TTYD_USER}/ttyd/releases/latest" | jq -r '.tag_name')
 if [ "$?" != "0" ]; then
     dialog --colors --backtitle "Fly-Tools Installer (1/3)" --title "\Z1\ZbInstall Error ttyd" --infobox "\Z3Unable to get latest version.\n If it is a gitee source, it may be that your installation times are too many, resulting in IP restrictions." 10 60
-    echo "\n"
+    echo
     exit 1
 fi
 
@@ -164,7 +164,7 @@ dialog --backtitle "Fly-Tools ${LTAG} Installer (2/3)" --title "Download compone
 if [ ! -f "./ttyd-f" ] || [ ! -s "./ttyd-f" ]; then
     sudo rm ./ttyd-f > /dev/null 2>&1
     dialog --colors --backtitle "Fly-Tools ${LTAG} Installer (2/3)" --title "\Z1Download Error\Zn" --infobox "Download ttyd-${TTYD_STATE}-${TTYD_LTAG} failed, please check the network" 10 60
-    echo "\n"
+    echo
     exit 1
 fi
 sudo mv ./ttyd-f /usr/local/bin/ttyd-f
@@ -195,7 +195,7 @@ sudo systemctl enable ttyd-f.service
 sudo systemctl restart ttyd-f.service
 if [ "$?" != "0" ]; then
     dialog --colors --backtitle "Fly-Tools ${LTAG} Installer (2/3)" --title "\Z1Install ttyd Error\Zn" --infobox "The ttyd service failed to install and start successfully." 10 60
-    echo "\n"
+    echo
     exit 1
 fi
 
@@ -216,7 +216,7 @@ dialog --backtitle "Fly-Tools ${LTAG} Installer (2/3)" --title "Download compone
 if [ ! -f "./Fly-Tools" ] || [ ! -s "./Fly-Tools" ]; then
     sudo rm ./Fly-Tools > /dev/null 2>&1
     dialog --colors --backtitle "Fly-Tools ${LTAG} Installer (2/3)" --title "\Z1Download Error\Zn" --infobox "Download Fly-Tools-${STATE}-${LTAG} failed, please check the network" 10 60
-    echo "\n"
+    echo
     exit 1
 fi
 sudo mv ./Fly-Tools /usr/local/bin/Fly-Tools
@@ -247,11 +247,21 @@ sudo systemctl restart Fly-Tools.service
 sudo systemctl enable Fly-Tools.service
 if [ "$?" != "0" ]; then
     dialog --colors --backtitle "Fly-Tools ${LTAG} Installer (2/3)" --title "\Z1Install Fly-Tools Error\Zn" --infobox "The Fly-Tools service failed to install and start successfully." 10 60
-    echo "\n"
+    echo
     exit 1
+fi
+
+MOONRAKER_ASVC="/home/$SUDO_USER/printer_data/moonraker.asvc"
+if [ -f $MOONRAKER_ASVC ]; then
+    if ! grep -q Fly-Tools $MOONRAKER_ASVC; then
+        echo "\nFly-Tools" >> $MOONRAKER_ASVC
+        sudo systemctl restart moonraker.service
+    fi
 fi
 
 dialog --colors --backtitle "Fly-Tools ${LTAG} Installer (3/3)" --title "\Z4Fly-Tools installed successfully\Zn" --msgbox "Fly-Tools installation completed.\nPlease open your browser and visit http://{ip}:9999/\n\nPress the \Z1\ZrEnter\Zn key to exit." 10 60
 
-echo "\nGoodbye!!!\n"
+echo
+echo "Goodbye!!!"
+echo
 exit 0
